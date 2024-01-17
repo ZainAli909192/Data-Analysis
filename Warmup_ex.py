@@ -22,13 +22,13 @@ df1=pd.DataFrame(dict1)
 # find overall description/information of dataset 
 # print(df1.describe(include='all'))
 
-# find unique values from the any colummn 
+# find unique values from any colummn 
 # print(df1['Gender'].unique())
 
-# Find number of unique value from gender 
-# print(df1['Gender'].nunique())
+# Find number of unique values from gender  
+# print(df1['Gender'].nunique()) # This method can be used to with dataframe also 
 
-# display count of unique values in gender column 
+# display count of unique values in any column (gender) 
 # print(df1['Gender'].value_counts())
 
 # find total number of students having marks>=90 and less then 99
@@ -39,6 +39,9 @@ df1=pd.DataFrame(dict1)
 # showing with between method  
 # print(sum(df1['Marks'].between(90,99) )) #this is including 99 value also like <=
 # print(sum(df1['Marks'].between(90,98) ))
+
+# find name of stud having low marks 
+print(df1[df1['Marks'].min() == df1['Marks']]['Name'])
 
 # find average/max/min of marks 
 # print(df1['Marks'].mean())
@@ -60,6 +63,9 @@ def marks(x):
 
 # to delete column 
 # df1.drop('Male_Female',axis=1,inplace=True)
+
+# if any row have all missing values then delet that one
+# df1.dropna(how='all',axis=0,inplace=True)
 # print(df1)
 
 # For multiple columns deletions 
@@ -85,6 +91,10 @@ def marks(x):
 # show name of the students having marks>=90
 # print(df1[df1['Marks']>=90]['Name'])
 
+# replace/fill missing values 
+# df1['Marks']=df1['Marks'].fillna(df1['Marks'].mean())
+# print(df1['Marks'])
+
 # to check null values in columns 
 # print(df1.isnull().sum())
 
@@ -96,3 +106,28 @@ def marks(x):
 
 # print(df1['Name'].apply(marks))
 # print(df1['Name'].apply(lambda x:x+" Awon"))
+
+# find top 5 students name in class (any numb of rows)
+# print(df1.nlargest(5,'Marks')[['Name','Marks']])
+
+# rename column 
+# df1.rename(columns={'Marks':'Final_Marks','Email':'New_email'})
+ 
+# merge two data sets 
+# dict2 ={'Name':['Babar'],
+#                 'Marks':[98],
+#                 'Gender':['Male']
+#                }
+# df2=pd.DataFrame(dict2,index=[0])
+
+# df3=pd.concat([df1,df2],ignore_index=True)
+# print(df3)
+
+# loc & iloc to select particular row/column (order/index of columns matter)
+
+# labels used in loc function 
+# print(df1.loc[:,'Marks':'Gender'])
+
+# indexes use in iloc function 
+# print(df1.iloc[:,1:3])
+print(df1.iloc[0,0:3])
