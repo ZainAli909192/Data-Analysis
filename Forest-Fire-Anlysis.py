@@ -6,10 +6,10 @@ import seaborn as sns
 path="E:\\All python\\Data Analysis\\Data sets\\Forest_fire_dataset.csv"
 data = pd.read_csv(path, encoding='latin-1',parse_dates=['date'])
 
-print(data.columns)
+# print(data.columns)
 # print(data.dtypes)
 
-# print(data.head())
+print(data.head())
 # print(data.tail(5))
 
 # print(data.shape)
