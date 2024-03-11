@@ -79,10 +79,10 @@ print(data['Grade'].unique())
 # plt.show()
 
 # which grade has highest numb of subscribers 
-# plt.figure(figsize=(5,4))
-# sn.barplot(y='Grade',x='Video Uploads',data=data) 
-# sn.scatterplot(y='Grade',x='Video Uploads',data=data) 
-# sn.histplot(x='Grade',y='Subscribers',data=data) 
-# plt.show()
+plt.figure(figsize=(5,4))
+sn.barplot(y='Grade',x='Video Uploads',data=data) 
+sn.scatterplot(y='Grade',x='Video Uploads',data=data) 
+sn.histplot(x='Grade',y='Subscribers',data=data) 
+plt.show()
 
 print(data.groupby('Grade').mean())
