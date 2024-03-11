@@ -5,7 +5,7 @@ data=pd.read_csv(path)
 # print(data)
 
 # display all rows except last 5 rows 
-# print(data.head(len(data)-5))
+print(data.head(len(data)-5))
 # print(data.head(-5))
 
 # display all rows except first 5 rows 
