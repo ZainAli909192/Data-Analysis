@@ -19,7 +19,7 @@ pd.options.display.float_format='{:.2f}'.format # for to get two decimal numbers
 import numpy as np
 data=data.replace('--',np.nan,regex=True)
 # print(data)
-# print(data.isnull().sum())
+print(data.isnull().sum())
 
 
 import seaborn as sn 
