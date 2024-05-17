@@ -47,18 +47,17 @@ print(data.head())
 # data2=data1.groupby('year')['number'].sum()
 # print(data2)
 
+find total numb of fires reported in 2015 
+print(len(data[data['year']==2015]))
+
+
 # numb of fires reported in Amazonas day-wise 
 # data3=data[data['state']=='Amazonas']
 # print(data3.dtypes)
 # print(data3.groupby(data3['date'].dt.day_of_week).sum())
 
-# find total numb of fires reported in 2015 
-# print(len(data[data['year']==2015]))
 
-# data4=data[data['year']==2015]
-# sns.barplot(x='year', y='month',data=data4)
-# sns.countplot(data4['month'])
-# plt.show()
+
 
 data5=data[data.groupby('state')['number'].mean().sort_values(ascending=False)]
 # print(data5)
