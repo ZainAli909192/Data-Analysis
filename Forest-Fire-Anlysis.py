@@ -41,6 +41,11 @@ print(data.head())
 # print(data['state']=='Amazonas'.sum())
 # print(data[data['state']=='Amazonas'][['number','month','state']])
 
+data4=data[data['year']==2015]
+sns.barplot(x='year', y='month',data=data4)
+sns.countplot(data4['month'])
+plt.show()
+
 # numb of fires  reported in Amazonas (Year wise ) 
 # print(data[data['state']=='Amazonas'][['number','month','state']].sum() )
 # data1=data[data['state']=='Amazonas']
