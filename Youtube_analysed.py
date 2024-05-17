@@ -40,13 +40,15 @@ plt.show()
 # data['Rank']=data['Rank'].astype('float')
 # print(data.dtypes)
 
+data['Subscribers']=data['Subscribers'].str.replace('--','0')
+data['Subscribers']=data['Subscribers'].astype('int')
+print(data.dtypes)
+
 # clean video upload and subscribes column 
 # data['Video Uploads']=data['Video Uploads'].str.replace('--','0')
 # data['Video Uploads']=data['Video Uploads'].astype('int')
 
-# data['Subscribers']=data['Subscribers'].str.replace('--','0')
-# data['Subscribers']=data['Subscribers'].astype('int')
-# print(data.dtypes)
+
 
 # Clean grade column 
 # print(data['Grade'].unique())
